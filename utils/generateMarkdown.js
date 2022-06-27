@@ -44,10 +44,10 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   if (license === licenseSelection[0]){
     return `Read more about ${licenseSelection[0]} here:`
-  } else if (license === licArray[1]){
+  } else if (license === licenseSelection[1]){
     return `Read more about ${licenseSelection[1]} here:`
   } else if (license === licenseSelection[2]){
-    return `Read more about ${licenseSelectiony[2]} here:`
+    return `Read more about ${licenseSelection[2]} here:`
   } else if (license === licenseSelection[3]){
     return `Read more about ${licenseSelection[3]} here:`
   } 
@@ -58,6 +58,48 @@ function renderLicenseSection(license) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  return `# ${data.Title}
+
+  ## Badges
+  ${renderLicenseBadge(data.license)}
+
+  ## Table of Contents
+  * [License](#License)
+  * [Description](#Description)
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [How to Contribute](#Contributing)
+  * [Tests](#Tests)
+  * ${renderLicenseLink(data.license)}
+  * [Questions?](#Questions)
+  ## License
+
+  ## Description:
+  ${data.Description}
+
+  ## Installation:
+  ${data.Install}
+
+  ## Usage:
+  ${data.Usage}
+
+  ## Contributing:
+  [Contributor Covenant](https://www.contributor-covenant.org/)  
+  ${data.Contributing}
+
+  ## Tests:
+  ${data.Tests}
+
+  ${renderLicenseSection(data.license)}
+
+  ## Questions? Feel free to reach out directly at:
+  [${data.Github}](https://github.com/${data.Github})
+
+  I can also be reached at:
+  ${data.Email}
+  
+  
+`;
   
 }
 
