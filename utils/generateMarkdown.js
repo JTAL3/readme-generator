@@ -1,6 +1,8 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 const licenseSelection = ["Apache License 2.0", "BSD licenses", "GNU licenses", "MIT License"]
 // If there is no license, return an empty string
+//Need to figure out bug causing license/badge malfunction
+//I believe it is keyword related, but unable to focus as of now ha
 function pullBadge(license) {
   if (license === licenseSelection[0]){
     return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
