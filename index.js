@@ -72,14 +72,9 @@ const questions = [{
     type: "list",
     name: "License",
     message: "Select licenses included with this project?",
-    choices: ["Apache License 2.0", "BSD licenses", "GNU licenses", "MIT License"],
+    choices: ["Apache License 2.0", "BSD licenses", "GNU licenses", "MIT License"]
 }, 
 
-{
-    type: "input",
-    name: "Do you have any badges?",
-    message: "Badges"
-}, 
 
 {
     type: "input",
