@@ -4,6 +4,9 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
+// THEN a high-quality, professional README.md is generated with the title of my project and 
+// sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, 
+// and Questions
 const questions = [{
 
     type: "input",
@@ -45,7 +48,7 @@ const questions = [{
     type: "input",
     name: "Email",
     message: "Please provide your email address."
-}
+},
 
 {
     type: "input",
@@ -61,14 +64,15 @@ const questions = [{
 
 {
     type: "input",
-    name: "Contributions",
-    message: "List collaborators involved in the making of your project."
+    name: "Contributing",
+    message: "List any contribution guidelines involved in this project."
 }, 
 
 {
-    type: "input",
+    type: "list",
     name: "License",
-    message: "Are there licenses incorporated with this project?"
+    message: "Select licenses included with this project?",
+    choices: ["Apache License 2.0", "BSD licenses", "GNU licenses", "MIT License"],
 }, 
 
 {
@@ -79,14 +83,14 @@ const questions = [{
 
 {
     type: "input",
-    name: "If your project has a lot of features, list them here.",
-    message: "Features"
+    name: "Installation",
+    message: "Please provide installation instructions for this project."
 }, 
 
 {
     type: "input",
-    name: "Guidelines for how to contribute.",
-    message: "Contribute"
+    name: "Tests",
+    message: "Please list any test instructions."
 },  
 
 ];
@@ -113,7 +117,7 @@ function init() {
     inquirer.prompt(questions)
     .then((userResponse) => {
         return writeToFile("readme.md", generateMarkdown(userResponse));
-
+        
     })
 }
 
